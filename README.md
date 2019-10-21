@@ -1,6 +1,9 @@
 **iSim: A basic Python physics simulation**
+
 **Structure:**
+
     *Object oriented apporach*:
+    
         The basis of this program is an object oriented
         approach to storing the simulated bodies.
         To this end the simulaton implements a world object
