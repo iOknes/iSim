@@ -6,3 +6,7 @@ class object:
         self.vel = vel
         self.mass = mass
         self.charge = charge
+    
+    @property
+    def speed(self):
+        return np.linalg.norm(self.vel)
