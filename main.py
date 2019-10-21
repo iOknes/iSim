@@ -1,6 +1,6 @@
 import numpy as np
 
-class object:
+class body:
     def __init__(self, pos, vel, mass, charge):
         self.pos = pos
         self.vel = vel
@@ -10,3 +10,16 @@ class object:
     @property
     def speed(self):
         return np.linalg.norm(self.vel)
+
+class world:
+    def __init__(self, G=6.67e-11, K=8.99e9, cap=128):
+        self.G = G
+        self.K = K
+        self.bodies = np.empty(cap, dtype=body)
+    
+    def addBody(self, pos, vel, mass, charge):
+        try:
+            self.bodies[self.bodies != None][0] = body(pos, vel, mass, charge)
+        except IndexError:
+            raise Exception("World capacity exceeded!")
+        
