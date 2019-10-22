@@ -7,6 +7,16 @@ class body:
         self.mass = mass
         self.charge = charge
     
+    def __eq__(self, bod):
+        return np.all(self.pos == bod.pos)
+    
+    def __ne__(self, bod):
+        return np.any(self.pos != bod.pos)
+
+    @staticmethod
+    def move(self, dt, a):
+        return self
+
     @property
     def speed(self):
         return np.linalg.norm(self.vel)
@@ -24,4 +34,6 @@ class world:
             raise Exception("World capacity exceeded!")
 
     def __mlt__(self, dt):
+        a = 0
+        self.bodies = self.bodies.move(dt, a)
         return self
