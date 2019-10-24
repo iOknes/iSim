@@ -17,6 +17,14 @@ class body:
         return f"pos: {self.pos}, vel: {self.vel}, mass: {self.mass}"
 
     @staticmethod
+    def getPos(bodyArray):
+        n = len(bodyArray)
+        posArray = np.empty(n, dtype=np.array)
+        for i in range(n):
+            posArray[i] = bodyArray[i].pos
+        return posArray
+
+    @staticmethod
     def move(bod, dt, a):
         return bod
 
