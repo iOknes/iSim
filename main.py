@@ -13,6 +13,9 @@ class body:
     def __ne__(self, bod):
         return np.any(self.pos != bod.pos)
 
+    def __str__(self):
+        return f"pos: {self.pos}, vel: {self.vel}, mass: {self.mass}"
+
     @staticmethod
     def move(self, dt, a):
         return self
