@@ -17,8 +17,8 @@ class body:
         return f"pos: {self.pos}, vel: {self.vel}, mass: {self.mass}"
 
     @staticmethod
-    def move(self, dt, a):
-        return self
+    def move(bod, dt, a):
+        return bod
 
     @property
     def speed(self):
@@ -38,5 +38,5 @@ class world:
 
     def __mlt__(self, dt):
         a = 0
-        self.bodies = self.bodies.move(dt, a)
+        self.bodies = body.move(self.bodies, dt, a)
         return self
