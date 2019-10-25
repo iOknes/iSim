@@ -69,9 +69,12 @@ class world:
         self.K = K
         self.bodies = np.empty(cap, dtype=body)
     
-    def addBody(self, pos, vel, mass, charge):
+    def addBody(self, pos, vel, mass, charge, rigid=False):
         try:
-            self.bodies[len(self.bodies) - len(self.bodies[self.bodies == None])] = body(pos, vel, mass, charge)
+            if rigidBody:
+                self.bodies[len(self.bodies) - len(self.bodies[self.bodies == None])] = rigidBody(pos, mass, charge)
+            else:
+                self.bodies[len(self.bodies) - len(self.bodies[self.bodies == None])] = body(pos, vel, mass, charge)
         except IndexError:
             raise Exception("World capacity exceeded!")
 
