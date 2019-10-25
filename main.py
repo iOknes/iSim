@@ -25,6 +25,14 @@ class body:
         return posArray
 
     @staticmethod
+    def getVel(bodyArray):
+        n = len(bodyArray)
+        velArray = np.empty(n, dtype=np.array)
+        for i in range(n):
+            velArray[i] = bodyArray[i].vel
+        return velArray
+
+    @staticmethod
     def move(bod, a, dt):
         return bod
 
