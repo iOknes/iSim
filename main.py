@@ -16,6 +16,10 @@ class body:
     def __str__(self):
         return f"pos: {self.pos}, vel: {self.vel}, mass: {self.mass}"
 
+    @property
+    def speed(self):
+        return np.linalg.norm(self.vel)
+
     @staticmethod
     def getPos(bodyArray):
         n = len(bodyArray)
@@ -47,10 +51,6 @@ class body:
             bod.pos += vh * dt
             bod.vel = vh + a * dt**2 / 2
         return bod
-
-    @property
-    def speed(self):
-        return np.linalg.norm(self.vel)
 
 class rigidBody(body):
     def __init__(self, pos, mass, charge):
