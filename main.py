@@ -25,12 +25,23 @@ class body:
         return posArray
 
     @staticmethod
-    def move(bod, dt, a):
+    def move(bod, a, dt):
         return bod
 
     @property
     def speed(self):
         return np.linalg.norm(self.vel)
+
+class rigidBody(body):
+    def __init__(self, pos, mass, charge):
+        self.pos = pos
+        self.vel = 0
+        self.mass = mass
+        self.charge = charge
+    
+    @staticmethod
+    def fromBody(bod):
+        return rigidBody(bod.pos, bod.mass, bod.charge)
 
 class world:
     def __init__(self, G=6.67e-11, K=8.99e9, cap=128):
@@ -46,5 +57,5 @@ class world:
 
     def __mlt__(self, dt):
         a = 0
-        self.bodies = body.move(self.bodies, dt, a)
+        self.bodies = body.move(self.bodies, a, dt)
         return self
