@@ -2,6 +2,16 @@
 
 ## Structure:
 
+### The goals:
+
+The goal of this Python package is to create a flexible, yet
+fast, framework for creating simulations of physical phenomena.
+It is meant to produce code that is fast, but not so fast that
+human readability and flexibility is compromised. Fast writing
+and modifying of code takes center stage, allowing for projects
+to be completed in a reasonable time, while remaining 
+understandable to the user of the module.
+
 ### Object oriented apporach:
 
 The basis of this program is an object oriented
