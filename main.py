@@ -46,7 +46,7 @@ class body:
             for i in range(len(bod)):
                 bod[i].pos = pa[i]
                 bod[i].vel = va[i]
-        except IndexError:
+        except TypeError:
             vh = bod.vel * a * dt**2 / 2
             bod.pos += vh * dt
             bod.vel = vh + a * dt**2 / 2
