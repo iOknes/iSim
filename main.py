@@ -78,6 +78,9 @@ class world:
         except IndexError:
             raise Exception("World capacity exceeded!")
 
+    def joinBody(self, body):
+        self.bodies[len(self.bodies) - len(self.bodies[self.bodies == None])] = body
+
     def __mlt__(self, dt):
         a = 0
         self.bodies = body.move(self.bodies, a, dt)
