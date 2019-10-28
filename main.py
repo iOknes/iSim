@@ -85,3 +85,6 @@ class world:
         a = 0
         self.bodies = body.move(self.bodies, a, dt)
         return self
+    
+    def __imul__(self, dt):
+        return self * dt
