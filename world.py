@@ -13,7 +13,7 @@ class World:
 
     def addBody(self, pos, vel, mass, charge, rigid=False):
         body = RigidBody(pos, mass, charge) if rigid else Body(pos, vel, mass, charge)
-        joinBody(body)
+        self.joinBody(body)
 
     def __mul__(self, dt):
         a = 0
@@ -22,3 +22,9 @@ class World:
 
     def __imul__(self, dt):
         return self * dt
+
+    def getAcc(self, gravity=True, elmag=False):
+        acc = np.empty(len(self.bodies))
+        for body in self.bodies[self.bodies != None]:
+            
+            pass

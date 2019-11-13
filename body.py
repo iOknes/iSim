@@ -54,24 +54,20 @@ class Body:
 
     @staticmethod
     def getPos(bodyArray):
-        posArray = bodyArray.pos
-        """
+        #posArray = bodyArray.pos
         n = len(bodyArray)
         posArray = np.empty(n, dtype=np.array)
         for i in range(n):
             posArray[i] = bodyArray[i].pos
-        """
         return posArray
 
     @staticmethod
     def getVel(bodyArray):
-        velArray = bodyArray.vel
-        """
+        #velArray = bodyArray.vel
         n = len(bodyArray)
         velArray = np.empty(n, dtype=np.array)
         for i in range(n):
             velArray[i] = bodyArray[i].vel
-        """
         return velArray
 
     @staticmethod
