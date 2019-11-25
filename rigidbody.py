@@ -1,11 +1,11 @@
+"""
+A subclass of body for simulating rigid bodies
+"""
 from body import Body
 
 class RigidBody(Body):
     def __init__(self, pos, mass, charge):
-        self._pos = pos
-        self._vel = 0
-        self._mass = mass
-        self._charge = charge
+        super().__init__(pos, 0, mass, charge)
 
     @staticmethod
     def fromBody(body):
