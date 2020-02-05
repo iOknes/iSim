@@ -1,4 +1,4 @@
-# iSim: A basic Python physics simulation
+# pySim: A basic Python physics simulation
 
 ## Structure:
 
